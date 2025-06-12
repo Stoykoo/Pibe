@@ -1,5 +1,6 @@
 :root {
-    --primary: #FF4655;
+    --primary: #E53E3E; /* Rojo más oscuro y profesional */
+    --primary-glow: rgba(229, 62, 62, 0.3); /* Brillo reducido */
     --secondary: #1E1E1E;
     --accent: #FFD700;
     --text: #FFFFFF;
@@ -43,8 +44,8 @@ h1 {
     color: var(--primary);
     text-transform: uppercase;
     margin-bottom: 0.5rem;
-    text-shadow: 0 0 10px rgba(255, 70, 85, 0.5);
-    animation: glow 2s infinite alternate;
+    text-shadow: 0 0 8px rgba(255, 70, 85, 0.3); /* Igual que el dorado */
+    animation: glow 3s infinite alternate;
     line-height: 1;
     word-wrap: break-word;
     overflow-wrap: break-word;
@@ -56,7 +57,7 @@ h2 {
     color: var(--accent);
     text-transform: uppercase;
     margin-bottom: 0.5rem;
-    text-shadow: 0 0 8px rgba(255, 215, 0, 0.5);
+    text-shadow: 0 0 8px rgba(255, 215, 0, 0.3); /* Misma intensidad que el rojo */
     animation: float 3s ease-in-out infinite;
     line-height: 1;
 }
@@ -254,11 +255,11 @@ p {
 /* Animations */
 @keyframes glow {
     from {
-        text-shadow: 0 0 10px rgba(255, 70, 85, 0.5);
+        text-shadow: 0 0 8px rgba(255, 70, 85, 0.3);
     }
 
     to {
-        text-shadow: 0 0 20px rgba(255, 70, 85, 0.8), 0 0 30px rgba(255, 70, 85, 0.6);
+        text-shadow: 0 0 12px rgba(255, 70, 85, 0.4); /* Suave incremento */
     }
 }
 
@@ -630,47 +631,57 @@ p {
 
 /* Ajustes específicos para móvil */
 @media (max-width: 768px) {
-    /* 1. Reduce el brillo del color primario */
-    :root {
-        --primary: #e63946; /* Versión menos saturada del rojo */
-    }
-
-    /* 2. Ajusta tamaños de texto */
     h1 {
-        font-size: clamp(2rem, 12vw, 3rem) !important;
-        line-height: 1.1 !important;
-        margin-bottom: 0.3rem !important;
+        text-shadow: 0 0 5px rgba(255, 70, 85, 0.3) !important;
     }
 
     h2 {
-        font-size: clamp(1.5rem, 8vw, 2.2rem) !important;
-        line-height: 1.1 !important;
+        text-shadow: 0 0 5px rgba(255, 215, 0, 0.3) !important;
     }
 
-    h3 {
-        font-size: clamp(1.2rem, 6vw, 1.8rem) !important;
+    @keyframes glow {
+        from {
+            text-shadow: 0 0 5px rgba(255, 70, 85, 0.3);
+        }
+
+        to {
+            text-shadow: 0 0 8px rgba(255, 70, 85, 0.4);
+        }
     }
 
-    /* 3. Corrige el problema con la "S" */
+    /* 4. Corrección para la "S" */
     .logo-container {
-        margin-bottom: 0.8rem !important;
+        margin-bottom: 0.5rem !important;
     }
 
-    /* 4. Ajusta el brillo de los efectos */
-    .epic {
-        text-shadow: 0 0 3px var(--accent) !important;
-    }
-
-    /* 5. Ajusta el padding general */
-    header {
-        padding: 1.5rem 1rem !important;
-    }
-
-    /* 6. Reduce el tamaño del logo en móvil */
     .logo {
-        width: 90px !important;
-        height: 90px !important;
+        width: 80px !important;
+        height: 80px !important;
+        border: 2px solid #fff !important;
     }
+
+    /* 5. Reduce brillo en la barra divisora */
+    .divider {
+        background: linear-gradient(90deg, transparent, rgba(229, 62, 62, 0.4), rgba(255, 215, 0, 0.2), rgba(229, 62, 62, 0.4), transparent);
+    }
+
+        .divider::after {
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.4), transparent);
+        }
+}
+
+/* 6. Reduce brillo en botones */
+.btn-primary {
+    box-shadow: 0 4px 10px rgba(229, 62, 62, 0.3) !important;
+}
+
+    .btn-primary:hover {
+        box-shadow: 0 6px 12px rgba(229, 62, 62, 0.4) !important;
+    }
+
+/* 7. Ajusta el fondo gradiente */
+body {
+    background-image: radial-gradient(circle at 10% 20%, rgba(229, 62, 62, 0.05) 0%, transparent 20%), radial-gradient(circle at 90% 80%, rgba(255, 215, 0, 0.05) 0%, transparent 20%);
 }
 
 /* Corrección adicional para la animación de flotación */
