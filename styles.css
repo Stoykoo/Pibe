@@ -40,7 +40,8 @@ header {
 
 h1 {
     font-family: 'Bungee', cursive;
-    font-size: clamp(2.5rem, 10vw, 5rem);
+    font-size: clamp(2rem, 5vw, 4rem); /* tamaño responsive */
+    white-space: nowrap; /* evita salto de línea */
     color: var(--primary);
     text-transform: uppercase;
     margin-bottom: 0.5rem;
