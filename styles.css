@@ -628,3 +628,58 @@ p {
     }
 }
 
+/* Ajustes específicos para móvil */
+@media (max-width: 768px) {
+    /* 1. Reduce el brillo del color primario */
+    :root {
+        --primary: #e63946; /* Versión menos saturada del rojo */
+    }
+
+    /* 2. Ajusta tamaños de texto */
+    h1 {
+        font-size: clamp(2rem, 12vw, 3rem) !important;
+        line-height: 1.1 !important;
+        margin-bottom: 0.3rem !important;
+    }
+
+    h2 {
+        font-size: clamp(1.5rem, 8vw, 2.2rem) !important;
+        line-height: 1.1 !important;
+    }
+
+    h3 {
+        font-size: clamp(1.2rem, 6vw, 1.8rem) !important;
+    }
+
+    /* 3. Corrige el problema con la "S" */
+    .logo-container {
+        margin-bottom: 0.8rem !important;
+    }
+
+    /* 4. Ajusta el brillo de los efectos */
+    .epic {
+        text-shadow: 0 0 3px var(--accent) !important;
+    }
+
+    /* 5. Ajusta el padding general */
+    header {
+        padding: 1.5rem 1rem !important;
+    }
+
+    /* 6. Reduce el tamaño del logo en móvil */
+    .logo {
+        width: 90px !important;
+        height: 90px !important;
+    }
+}
+
+/* Corrección adicional para la animación de flotación */
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-5px); /* Reduce el movimiento */
+    }
+}
