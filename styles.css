@@ -537,3 +537,94 @@ p {
         max-width: 500px;
     }
 }
+
+.logo-container {
+    text-align: center; /* Centra el logo */
+    margin-bottom: 1.5rem; /* Espacio entre logo y títulos */
+}
+
+.logo {
+    width: 120px; /* Tamaño del logo */
+    height: 120px;
+    border-radius: 50%; /* Forma circular (opcional) */
+    object-fit: cover; /* Asegura que la imagen no se deforme */
+    border: 3px solid #fff; /* Borde blanco (opcional) */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra (opcional) */
+}
+
+/* Footer - Versión corregida */
+.copyright {
+    background-color: #111;
+    color: #fff;
+    padding: 2rem 0;
+    font-family: 'Montserrat', sans-serif;
+    border-top: 1px solid #333;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    margin-top: 4rem;
+}
+
+    .copyright .container {
+        width: 100%;
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 20px;
+        /* Añade esto para centrar el texto internamente */
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .copyright p {
+        margin: 0.3rem 0;
+        font-size: 0.95rem;
+        line-height: 1.5;
+    }
+
+    .copyright strong {
+        color: var(--primary); /* Usa tu variable de color */
+        font-weight: 700;
+    }
+
+    .copyright .tagline {
+        font-size: 0.85rem;
+        opacity: 0.8;
+        margin-top: 0.5rem;
+    }
+
+/* Social links - Versión mejorada */
+.social-links {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 1.5rem;
+    padding-bottom: 1rem;
+}
+
+.pibe-icon {
+    width: 50px; /* o el tamaño que necesites */
+    height: 50px;
+    object-fit: cover; /* útil si es una imagen */
+    border-radius: 50%;
+    transition: box-shadow 0.3s ease;
+}
+
+    .pibe-icon:hover {
+        box-shadow: 0 0 10px rgba(255, 70, 85, 0.5);
+    }
+
+@media (max-width: 768px) {
+    .copyright p {
+        font-size: 0.85rem;
+    }
+
+    .copyright .tagline {
+        font-size: 0.8rem;
+    }
+}
+
